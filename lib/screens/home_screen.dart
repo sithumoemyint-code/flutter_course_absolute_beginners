@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/base/res/media.dart' show AppMedia;
 import 'package:my_app/base/res/styles/app_styles.dart' show AppStyles;
+import 'package:my_app/base/widgets/app_double_text.dart' show AppDoubleText;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 40),
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -64,6 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text("Search icon"),
                     ],
                   ),
+                ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  bigText: 'Upcoming Flight',
+                  smallText: 'View all',
                 ),
               ],
             ),

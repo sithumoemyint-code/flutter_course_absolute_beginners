@@ -10,7 +10,13 @@ class AppStyles {
   static TextStyle headLineStyle1 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
-    color: AppStyles.textColor,
+    color: textColor,
+  );
+
+  static TextStyle headLineStyle2 = TextStyle(
+    fontSize: 21,
+    fontWeight: FontWeight.bold,
+    color: textColor,
   );
 
   static TextStyle headLineStyle3 = const TextStyle(
