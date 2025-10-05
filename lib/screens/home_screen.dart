@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppStyles.bgColor,
       body: ListView(
         children: [
+          const SizedBox(height: 40),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(

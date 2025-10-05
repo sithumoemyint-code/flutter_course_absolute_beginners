@@ -26,7 +26,10 @@ class _AppDoubleTextState extends State<AppDoubleText> {
           onTap: () {
             print("You are tapped");
           },
-          child: Text(widget.smallText, style: AppStyles.headLineStyle3),
+          child: Text(
+            widget.smallText,
+            style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
+          ),
         ),
       ],
     );
