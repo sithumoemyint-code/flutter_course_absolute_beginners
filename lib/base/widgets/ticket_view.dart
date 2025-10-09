@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/base/res/styles/app_styles.dart' show AppStyles;
 import 'package:my_app/base/widgets/app_layoutbuilder_widget.dart'
     show AppLayoutBuilderWidget;
+import 'package:my_app/base/widgets/big_circle.dart' show BigCircle;
 import 'package:my_app/base/widgets/big_dot.dart' show BigDot;
 
 class TicketView extends StatelessWidget {
@@ -13,53 +14,182 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
       width: size.width,
-      height: 176,
+      height: 186,
       child: Container(
-        // margin: const EdgeInsets.only(right: 16),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: AppStyles.ticketBlue,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(21),
-            topRight: Radius.circular(21),
-          ),
-        ),
+        margin: const EdgeInsets.only(right: 16),
         child: Column(
           children: [
-            Row(
-              children: [
-                Text(
-                  "NYC",
-                  style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppStyles.ticketBlue,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(21),
+                  topRight: Radius.circular(21),
                 ),
-                Expanded(child: Container()),
-                const BigDot(),
-                Expanded(
-                  child: Stack(
+              ),
+              child: Column(
+                children: [
+                  // show departure and destination with icons first line
+                  Row(
                     children: [
-                      SizedBox(
-                        height: 24,
-                        child: AppLayoutBuilderWidget(randomDivider: 6),
+                      Text(
+                        "NYC",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
-                      Center(
-                        child: Transform.rotate(
-                          angle: 1.57,
-                          child: const Icon(
-                            Icons.local_airport_rounded,
-                            color: Colors.white,
-                          ),
+                      Expanded(child: Container()),
+                      const BigDot(),
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              height: 24,
+                              child: AppLayoutBuilderWidget(randomDivider: 6),
+                            ),
+                            Center(
+                              child: Transform.rotate(
+                                angle: 1.57,
+                                child: const Icon(
+                                  Icons.local_airport_rounded,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const BigDot(),
+                      Expanded(child: Container()),
+                      Text(
+                        "LDN",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
                         ),
                       ),
                     ],
                   ),
+                  const SizedBox(height: 3),
+                  // show departure and destination name with time second line
+                  Row(
+                    children: [
+                      Text(
+                        "New York",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      Text(
+                        "8H 30M",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      Text(
+                        "London",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              color: AppStyles.ticketOrange,
+              child: const Row(
+                children: [
+                  BigCircle(isRight: false),
+                  Expanded(
+                    child: AppLayoutBuilderWidget(randomDivider: 16, width: 6),
+                  ),
+                  BigCircle(isRight: true),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppStyles.ticketOrange,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(21),
+                  bottomRight: Radius.circular(21),
                 ),
-                const BigDot(),
-                Expanded(child: Container()),
-                Text(
-                  "LDN",
-                  style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                ),
-              ],
+              ),
+              child: Column(
+                children: [
+                  // show departure and destination with icons first line
+                  Row(
+                    children: [
+                      Text(
+                        "NYC",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      const BigDot(),
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              height: 24,
+                              child: AppLayoutBuilderWidget(randomDivider: 6),
+                            ),
+                            Center(
+                              child: Transform.rotate(
+                                angle: 1.57,
+                                child: const Icon(
+                                  Icons.local_airport_rounded,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const BigDot(),
+                      Expanded(child: Container()),
+                      Text(
+                        "LDN",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 3),
+                  // show departure and destination name with time second line
+                  Row(
+                    children: [
+                      Text(
+                        "New York",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      Text(
+                        "8H 30M",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      Text(
+                        "London",
+                        style: AppStyles.headLineStyle3.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

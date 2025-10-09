@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 25),
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   bigText: 'Upcoming Flight',
                   smallText: 'View all',
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
 
                 TicketView(),
               ],
