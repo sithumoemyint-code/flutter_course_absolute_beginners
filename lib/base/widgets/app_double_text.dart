@@ -1,33 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/base/res/styles/app_styles.dart' show AppStyles;
 
-class AppDoubleText extends StatefulWidget {
+class AppDoubleText extends StatelessWidget {
   const AppDoubleText({
     super.key,
     required this.bigText,
     required this.smallText,
+    required this.func,
   });
 
   final String bigText;
   final String smallText;
+  final VoidCallback func;
 
-  @override
-  State<AppDoubleText> createState() => _AppDoubleTextState();
-}
-
-class _AppDoubleTextState extends State<AppDoubleText> {
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.bigText, style: AppStyles.headLineStyle2),
+        Text(bigText, style: AppStyles.headLineStyle2),
         InkWell(
-          onTap: () {
-            print("You are tapped");
-          },
+          onTap: func,
           child: Text(
-            widget.smallText,
+            smallText,
             style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
           ),
         ),

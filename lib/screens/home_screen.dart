@@ -5,6 +5,8 @@ import 'package:my_app/base/res/styles/app_styles.dart' show AppStyles;
 import 'package:my_app/base/utils/all_json.dart' show ticketList;
 import 'package:my_app/base/widgets/app_double_text.dart' show AppDoubleText;
 import 'package:my_app/base/widgets/ticket_view.dart' show TicketView;
+import 'package:my_app/routes/routes.dart' show AppRoutes;
+import 'package:my_app/screens/widgets/hotel.dart' show Hotel;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -70,9 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: 'Upcoming Flight',
                   smallText: 'View all',
+                  func: () =>
+                      Navigator.pushNamed(context, AppRoutes.allTickets),
                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
@@ -83,6 +87,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         .toList(),
                   ),
                 ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  bigText: 'Hotels',
+                  smallText: 'View all',
+                  func: () => {},
+                ),
+                Hotel(),
               ],
             ),
           ),
