@@ -6,7 +6,7 @@ import 'package:my_app/base/utils/all_json.dart' show ticketList, hotelList;
 import 'package:my_app/base/widgets/app_double_text.dart' show AppDoubleText;
 import 'package:my_app/base/widgets/ticket_view.dart' show TicketView;
 import 'package:my_app/routes/routes.dart' show AppRoutes;
-import 'package:my_app/screens/widgets/hotel.dart' show Hotel;
+import 'package:my_app/screens/home/widgets/hotel.dart' show Hotel;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
