@@ -2,7 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/base/res/media.dart' show AppMedia;
 import 'package:my_app/base/res/styles/app_styles.dart' show AppStyles;
-import 'package:my_app/base/utils/all_json.dart' show ticketList;
+import 'package:my_app/base/utils/all_json.dart' show ticketList, hotelList;
 import 'package:my_app/base/widgets/app_double_text.dart' show AppDoubleText;
 import 'package:my_app/base/widgets/ticket_view.dart' show TicketView;
 import 'package:my_app/routes/routes.dart' show AppRoutes;
@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: ticketList
+                        .take(3)
                         .map((singleTicket) => TicketView(ticket: singleTicket))
                         .toList(),
                   ),
@@ -93,7 +95,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   smallText: 'View all',
                   func: () => {},
                 ),
-                Hotel(),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .take(2)
+                        .map((hotel) => Hotel(hotel: hotel))
+                        .toList(),
+                  ),
+                ),
               ],
             ),
           ),
