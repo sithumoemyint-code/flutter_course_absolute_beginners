@@ -12,6 +12,7 @@ class AppStyles {
   static Color ticketTabColor = const Color(0xFFF4F6FD);
   static Color planeColor = const Color(0xFFBFC2DF);
   static Color findTicketColor = const Color(0xD91130CE);
+  static Color circleColor = const Color(0xFF1899999);
 
   static TextStyle textStyle = TextStyle(
     fontSize: 16,
